@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'NunitoSans';
+    src: url('../fonts/NunitoSans-Regular.woff2') format('woff2'),
+        url('../fonts/NunitoSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NunitoSans-sb';
+    src: url('../fonts/NunitoSans-SemiBold.woff2') format('woff2'),
+        url('../fonts/NunitoSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NunitoSans-bold';
+    src: url('../fonts/NunitoSans-Bold.woff2') format('woff2'),
+        url('../fonts/NunitoSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.roboto{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+}
+.roboto-medium{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+}
+.roboto-semibold{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 600;
+}
+.roboto-bold{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+}

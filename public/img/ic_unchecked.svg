@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_unchecked</title>
+    <g id="ic_unchecked" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M18,3.25 L6,3.25 C4.48121694,3.25 3.25,4.48121694 3.25,6 L3.25,18 C3.25,19.5187831 4.48121694,20.75 6,20.75 L18,20.75 C19.5187831,20.75 20.75,19.5187831 20.75,18 L20.75,6 C20.75,4.48121694 19.5187831,3.25 18,3.25 Z M6,4.75 L18,4.75 C18.6903559,4.75 19.25,5.30964406 19.25,6 L19.25,18 C19.25,18.6903559 18.6903559,19.25 18,19.25 L6,19.25 C5.30964406,19.25 4.75,18.6903559 4.75,18 L4.75,6 C4.75,5.30964406 5.30964406,4.75 6,4.75 Z" id="Rectangle" fill="#000000"></path>
+    </g>
+</svg>

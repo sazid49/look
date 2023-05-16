@@ -1,0 +1,528 @@
+@extends('frontend.layouts.legacy.claim')
+
+@section('title', __('labels.claim.tab_title'))
+
+@section('style')
+@stop
+
+@section('content')
+<!-- Content -->
+<div class="container">
+    <div class="form-wrapper">
+        <div class="row mb-3 mb-md-4">
+            <div class="col-lg-12 pr-md-0">
+                <!-- Tabs in Listing (Information, Gallery, Offer ect..) -->
+                <div id="listing-overview" class="listing-section card registration-section h-100">
+                    <!-- Listing Content -->
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="rms-wizard" class="rms-wizard defaultTheme">
+                                    <x-forms.patch :action="route('frontend.claim.update',$company)" class="needs-validation form-custom-responsive">
+                                        <div class="rms-container">
+                                            <!--Wizard Header Close-->
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="card-header subtitle border-bottom pt-0 pb-3 mx-0 mb-3">
+                                                        <h5>{{ __('labels.claim.title_note') }}</h5>
+                                                        <h6>Company ID: {{$company->id}}</h6>
+                                                    </div>
+                                                    <div class="rms-form-wizard">
+                                                        <!--Wizard Step Navigation Start-->
+                                                        <div class="rms-step-section compeletedStepClickable"
+                                                            data-step-counter="true" data-step-image="false">
+                                                            <ul class="rms-multistep-progressbar">
+                                                                <li class="rms-step rms-current-step">
+                                                                    <span class="step-icon">
+                                                                        <i class="fa fa-lock" aria-hidden="true"></i>
+                                                                    </span>
+                                                                    <span
+                                                                        class="step-title">{{ __('labels.claim.step_1_title') }}</span>
+                                                                    <span
+                                                                        class="step-info">{{ __('labels.claim.step_2_title') }}</span>
+                                                                </li>
+                                                                <li class="rms-step">
+                                                                    <span class="step-icon">
+                                                                        <i class="fa fa-file-text"
+                                                                            aria-hidden="true"></i>
+                                                                    </span>
+                                                                    <span
+                                                                        class="step-title">{{ __('labels.claim.step_3_title') }}</span>
+                                                                    <span
+                                                                        class="step-info">{{ __('labels.claim.step_4_title') }}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="col-md-3 margin-top-0 sticky login-sidebar register-sidebar justify-content-center flex-wrap pl-md-0 align-items-start add-asp">
+                                                    <div class="form-sidebar-body p-0">
+                                                        <div class="p-3">
+                                                            <ul
+                                                                class="liste-okey form-sidebar-list features pl-0 list-unstyled mb-0">
+                                                                <li>
+                                                                    {{ __('labels.claim.step_5_title') }}
+                                                                </li>
+                                                                <li>
+                                                                    {{ __('labels.claim.step_6_title') }}
+                                                                </li>
+                                                                <li>
+                                                                    {{ __('labels.claim.step_7_title') }}
+                                                                </li>
+                                                                <li>
+                                                                    {{ __('labels.claim.step_8_title') }}
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Wizard Navigation Close-->
+                                            <!--Wizard Content Section Start-->
+                                            <div class="rms-content-section">
+                                                <div class="rms-content-box rms-current-section">
+                                                    <div class="rms-content-area animated fadeIn">
+                                                        <div class="rms-content-title">
+                                                            <div class="leftside-title">
+                                                                {{ __('labels.claim.step_9_title') }}
+                                                            </div>
+                                                            <div class="step-label">1 - 2</div>
+                                                        </div>
+                                                        <div class="rms-content-body">
+                                                            <div id="add-listing" class="separated-form">
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <div class="form-group" id="company_name">
+                                                                            <label for="company_name"> {{ __('labels.claim.step_10_title') }}</label>
+                                                                            <input type="text" id="company_name" name="company_name" class="form-control inpt-control required" value="{{old('company_name',$company->company_name)}}" />
+                                                                            <div class="invalid-feedback">
+                                                                                {{ __('labels.claim.step_12_title') }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Address / Adresse -->
+                                                                    <div class="col-sm-6">
+                                                                        <div class="form-group">
+                                                                            <label for="">{{ __('labels.claim.step_11_title') }}</label>
+                                                                            <input class="form-control" type="text" name="address" value="{{old('address',$company->address)}}" />
+                                                                            <div class="invalid-feedback">
+                                                                                {{ __('labels.claim.step_12_title') }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <div class="form-group">
+                                                                            <label for="gen_postcode">{{ __('labels.claim.step_13_title') }}</label>
+                                                                            <input type="text" id="postcode" name="postcode" class="form-control" value="{{old('postcode',$company->postcode)}}" />
+                                                                            <div class="invalid-feedback">
+                                                                                {{ __('labels.claim.step_17_title') }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <div class="form-group">
+                                                                            <label for="city">{{ __('labels.claim.step_14_title') }}</label>
+                                                                            <input type="text" id="city" name="city" class="form-control" value="{{old('city',$company->city)}}" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="form-group">
+                                                                            <label for="email">{{ __('labels.claim.step_15_title') }}</label>
+                                                                            <input type="text" id="email" name="email" class="form-control inpt-control required" value="{{old('email',$company->email)}}" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="form-group">
+                                                                            <label for="phone">{{ __('labels.claim.step_18_title') }}</label>
+                                                                            <input type="text" id="phone" name="phone" class="form-control" value="{{old('phone',$company->phone)}}" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="form-group">
+                                                                            <label for="website"> {{ __('labels.claim.step_19_title') }}</label>
+                                                                            <input type="text" id="website" name="website" class="form-control" value="{{old('website',$company->website)}}" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+																@guest
+                                                                <div class="rms-content-title">
+                                                                    <div class="leftside-title">
+                                                                        {{ __('labels.claim.step_20_title') }}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="form-group">
+                                                                            <label for="gen_firstname">{{ __('labels.claim.step_21_title') }}</label>
+                                                                            <input type="text" id="gen_firstname" name="firstname" class="form-control inpt-control required" value="{{old('firstname')}}" />
+                                                                            <div class="invalid-feedback">
+                                                                                {{ __('labels.claim.step_22_title') }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="form-group">
+                                                                            <label for="gen_lastname">{{ __('labels.claim.step_23_title') }}</label>
+                                                                            <input type="text" id="gen_lastname" name="lastname" class="form-control inpt-control required" value="{{old('lastname')}}" />
+                                                                            <div class="invalid-feedback">
+                                                                                {{ __('labels.claim.step_24_title') }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="form-group">
+                                                                            <label for="gen_password">{{ __('labels.claim.step_25_title') }}</label>
+                                                                            <input type="password" id="gen_password" name="password" class="form-control inpt-control required" value="" />
+                                                                            <div class="invalid-feedback">
+                                                                                {{ __('labels.claim.step_26_title') }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="form-group">
+                                                                            <label for="gen_confirm_password">{{ __('labels.claim.step_27_title') }}</label>
+                                                                            <input type="password" id="gen_confirm_password" name="confirm_password" class="form-control inpt-control required" value="" />
+                                                                            <div class="invalid-feedback">
+                                                                                {{ __('labels.claim.step_24_title') }}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+																@endguest
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rms-content-box">
+                                                    <div class="rms-content-area">
+                                                        <div class="rms-content-title">
+                                                            <div class="leftside-title">Ausählen</div>
+                                                            <div class="step-label">2 - 2</div>
+                                                        </div>
+                                                        <div class="rms-content-body">
+                                                            <div id="add-listing" class="separated-form">
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="pricing pricing-palden">
+                                                                            <!-- pricing item 1 -->
+                                                                            <div class="pricing-item features-item ja-animate"
+                                                                                data-animation="move-from-bottom"
+                                                                                data-delay="item-0"
+                                                                                style="min-height: 497px">
+                                                                                <div class="pricing-deco">
+                                                                                    <svg class="pricing-deco-img"
+                                                                                        enable-background="new 0 0 300 100"
+                                                                                        height="100px" id="Layer_1"
+                                                                                        preserveAspectRatio="none"
+                                                                                        version="1.1"
+                                                                                        viewBox="0 0 300 100"
+                                                                                        width="300px" x="0px"
+                                                                                        xml:space="preserve"
+                                                                                        y="0px"></svg>
+                                                                                    <div class="pricing-price"> 240 CHF
+                                                                                    </div>
+                                                                                    <h3 class="pricing-title"> EINMALIG
+                                                                                        - für immer </h3>
+                                                                                    <small
+                                                                                        class="text-white mt-2">Keine
+                                                                                        weiteren Kosten</small>
+                                                                                </div>
+                                                                                <div class="pb-2">
+                                                                                    <table
+                                                                                        class="table table-bordered mt-2 produktaufzahlung">
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th scope="col">#</th>
+                                                                                                <th scope="col">{{ __('labels.claim.step_33_title') }}</th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <th scope="row">1</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Kontaktinformationen
+                                                                                                        Deiner Firma
+                                                                                                    </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">2</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Firmenadresse
+                                                                                                        mit Google
+                                                                                                        Maps-Funktion
+                                                                                                    </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">3</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Hilfe bei der
+                                                                                                        Formatierung der
+                                                                                                        Fotos </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">4</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Slider mit ihren
+                                                                                                        5
+                                                                                                        professionellen
+                                                                                                        Fotos </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">5</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Lookon verfasst
+                                                                                                        die
+                                                                                                        Firmenbeschreibung
+                                                                                                        in 100 Worten
+                                                                                                    </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">6</th>
+                                                                                                <td>
+                                                                                                    <p class="produkteregistration">Öffnungszeiten</p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">7</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Massgeschneiderte
+                                                                                                        Offertenformular
+                                                                                                        für Dein
+                                                                                                        Business </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">8</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Jobs
+                                                                                                        Ausschreibungen
+                                                                                                    </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">9</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Freischaltung:
+                                                                                                        sofort </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">10</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Änderungen /
+                                                                                                        Korrektur vom
+                                                                                                        Firmenprofil
+                                                                                                        durch Lookon
+                                                                                                    </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <th scope="row">11</th>
+                                                                                                <td>
+                                                                                                    <p
+                                                                                                        class="produkteregistration">
+                                                                                                        Keine
+                                                                                                        widerkehrende
+                                                                                                        Kosten </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col">
+                                                                    <p> Nach dem Eintrag kannst du dein Unternehmen mit
+                                                                        weiteren Informationen ausfüllen. </p>
+                                                                    <table class="table table-bordered">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th scope="col">#</th>
+                                                                                <th scope="col">{{ __('labels.claim.step_33_title') }}</th>
+																				<th scope="col">{{ __('labels.claim.step_34_title') }}</th>
+																				<th scope="col">{{ __('labels.claim.step_35_title') }}</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <th scope="row">1</th>
+                                                                                <td>
+                                                                                    <p class="package_3">
+                                                                                        Unternehmenseintrag </p>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <p class="online_3">Sofort </p>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <p class="produkteregistration">
+                                                                                        240 CHF </p>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!-- <tr><th scope="row"></th><td>&nbsp;</td><td></td><td></td></tr> -->
+                                                                            <tr>
+                                                                                <th scope="row">2</th>
+                                                                                <td colspan="2">
+                                                                                    <b>{{ __('labels.claim.step_35_title') }}</b>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <b>
+                                                                                        <p
+                                                                                            class="produkteregistration">
+                                                                                            240 CHF </p>
+                                                                                    </b>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-12" style="margin-bottom: -10px">
+                                                                    <div class="form-group">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input id="agb" type="checkbox"
+                                                                                name="agb"
+                                                                                class="custom-control-input required"
+                                                                                required="" />
+                                                                            <label class="custom-control-label"
+                                                                                for="agb"
+                                                                                style="margin-left: 13px"> Ich habe die
+                                                                                <a href="https://lookon.ch/pages/datenschutzerklarung"
+                                                                                    target="_blank">Datenschutzbedingungen</a>
+                                                                                und die <a
+                                                                                    href="https://lookon.ch/pages/allgemeine-geschaftsbedingungen"
+                                                                                    target="_blank">AGB</a> gelesen und
+                                                                                bin damit einverstanden. </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group">
+                                                                        <div class="custom-control custom-checkbox">
+                                                                            <input id="newsletter" type="checkbox"
+                                                                                name="newsletter"
+                                                                                class="custom-control-input required"
+                                                                                value="Yes" required="" />
+                                                                            <label class="custom-control-label"
+                                                                                for="newsletter"
+                                                                                style="margin-left: 13px">Ich möchte
+                                                                                gerne den Newsletter abonnieren.</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Wizard Content Section Close-->
+                                            <!--Wizard Footer section Start-->
+                                            <div class="rms-footer-section">
+                                                <div class="button-section">
+                                                    <span class="next">
+                                                        <a href="javascript:void(0)"
+                                                            class="btn button btn-theme btn-roundedalign-items-center">
+                                                            <span
+                                                                class="mr-2">{{ __('labels.claim.step_28_title') }}</span>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="feather feather-arrow-right-circle">
+                                                                <circle cx="12" cy="12" r="10">
+                                                                </circle>
+                                                                <polyline points="12 16 16 12 12 8"></polyline>
+                                                                <line x1="8" y1="12" x2="16"
+                                                                    y2="12"></line>
+                                                            </svg>
+                                                        </a>
+                                                    </span>
+                                                    <span class="prev" style="display: none">
+                                                        <a href="javascript:void(0)"
+                                                            class="btn button btn-theme btn-rounded align-items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="feather feather-arrow-left-circle">
+                                                                <circle cx="12" cy="12" r="10">
+                                                                </circle>
+                                                                <polyline points="12 8 8 12 12 16"></polyline>
+                                                                <line x1="16" y1="12" x2="8"
+                                                                    y2="12"></line>
+                                                            </svg>
+                                                            <span class="ml-2"> {{ __('labels.claim.step_38_title') }}</span>
+                                                        </a>
+                                                    </span>
+                                                    <span class="submit" style="display: none">
+                                                        <button id="submit_form_button" type="submit" name="submit"
+                                                            value="true"
+                                                            class="btn button btn-theme btn-rounded align-items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none"
+                                                                stroke="currentColor" stroke-width="2"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                class="feather feather-send">
+                                                                <line x1="22" y1="2" x2="11"
+                                                                    y2="13"></line>
+                                                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                                            </svg>
+                                                            <span class="ml-2">{{ __('labels.claim.step_39_title') }}</span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!--Wizard Footer Close-->
+                                        </div>
+                                        <input name="id" type="hidden" value="688937" />
+                                    </x-forms.patch>
+                                </div>
+                                <!--Wizard Container Close-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@stop
+
+@section('script')
+@stop

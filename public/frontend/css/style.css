@@ -1,0 +1,214 @@
+.main {
+    -webkit-box-shadow: 2px 2px 2px 2px #333333;
+    -moz-box-shadow: 2px 2px 2px 2px #333333;
+    box-shadow: 2px 2px 2px 2px #333333;
+}
+
+.logo {
+    float: left;
+    /* padding-top: 26px; */
+}
+
+/***************************************************sidebar*******************************************************/
+
+.card-header.subtitle {
+    margin: 0 1.25rem;
+    background: #fff;
+    padding-left: 0;
+    padding: 1.25rem 0 0.75rem 0;
+}
+
+.subtitle h2,
+.subtitle h3,
+.subtitle h4,
+.subtitle h5 {
+    margin-bottom: 0px !important;
+    font-size: 1.2rem;
+    color: #353535;
+    font-weight: 600;
+}
+
+.subtitle h6 {
+    margin-bottom: 0px !important;
+    font-size: 1.05rem;
+    color: #4d4d4d;
+    font-weight: 600;
+}
+
+ul.day-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ddd;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    padding-bottom: 0.5rem;
+}
+
+ul.day-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+ul.day-list li .day {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+ul.features {}
+
+ul.features li {
+    font-size: 12.5px;
+    padding: 0px 0px 6px 22px;
+    background-size: 15px 15px;
+}
+
+ul.features li:last-child {
+    padding-bottom: 0;
+
+}
+
+.register-sidebar {
+    border-radius: 6px 6px 6px 6px !important;
+    background: transparent;
+}
+
+.register-sidebar .form-sidebar-body {
+    border-radius: 6px 6px 6px 6px !important;
+}
+
+
+.listing-badge {
+    position: absolute;
+    z-index: 999;
+}
+
+.listing-badge {
+    width: 80px;
+    height: 30px;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    color: #fff;
+    padding: 3px;
+}
+
+.listing-badge.now-open {
+    background: #01ad85;
+}
+
+.listing-badge.now-open:before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-left: 5px solid transparent;
+    border-top: 5px solid #018264;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #018264;
+}
+
+.listing-badge.now-open:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -30px;
+    border-left: 15px solid #01ad85;
+    border-right: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    z-index: 999;
+}
+
+.listing-badge.now-closed {
+    background: #ff3753;
+}
+
+.listing-badge.now-closed:before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    border-left: 5px solid transparent;
+    border-top: 5px solid #d6022e;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #d6022e;
+}
+
+.listing-badge.now-closed:after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -30px;
+    border-left: 15px solid #ff3753;
+    border-right: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    z-index: 999;
+}
+
+.badge-text {
+    display: block;
+    padding: 2px;
+    font-size: 12.5px;
+    border: 1px solid transparent;
+    line-height: 18px;
+    text-align: center;
+    transition: 0.4s border ease;
+}
+
+.opening-hours {}
+
+.listing-badge.right-badge {
+    /* top: -42px; */
+    right: -10px;
+    left: auto;
+}
+
+.listing-badge.right-badge.now-open:before {
+    bottom: -10px;
+    right: 0;
+    left: auto;
+    border-left: 5px solid #018264;
+    border-top: 5px solid #018264;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.listing-badge.right-badge.now-open:after {
+    top: 0px;
+    left: -30px;
+    right: auto;
+    border-right: 15px solid #01ad85;
+    border-left: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.listing-badge.right-badge.now-closed:before {
+    bottom: -10px;
+    right: 0;
+    left: auto;
+    border-left: 5px solid #d6022e;
+    border-top: 5px solid #d6022e;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.listing-badge.right-badge.now-closed:after {
+    top: 0px;
+    left: -30px;
+    right: auto;
+    border-right: 15px solid #ff3753;
+    border-left: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.rating-review-info {
+    /* line-height: 1.2; */
+    /* font-size: 13px; */
+    border-right: 1px solid #efefef !important;
+}

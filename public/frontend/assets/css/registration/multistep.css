@@ -1,0 +1,692 @@
+.rms-wizard .rms-container:before,
+.rms-wizard .rms-container:after {
+    display: block;
+    content: " ";
+}
+
+.rms-wizard .rms-wizard-header {
+    border-bottom: 1px solid #dadada;
+    border-radius: 4px 4px 0 0;
+    clear: both;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f0f0+0,ffffff+100 */
+    background: #f0f0f0;
+    /* Old browsers */
+    background-repeat: no-repeat;
+    background: -moz-linear-gradient(top, #FFFFFF 0%, #f0f0f0 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f0f0f0 0%, #f0f0f0 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #FFFFFF 0%, #f0f0f0 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#f0f0f0', GradientType=0);
+    /* IE6-9 */
+}
+.rms-wizard .rms-wizard-header .title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 10px;
+    color: #757575;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.rms-wizard .rms-wizard-header .title span {
+    color: #59bbdf;
+    font-weight: 400;
+}
+.rms-wizard .rms-form-wizard {
+    clear: both;
+}
+.rms-wizard .rms-form-wizard:before,
+.rms-wizard .rms-form-wizard:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+.rms-wizard .rms-step-section {
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e1ecef;
+    background: #FFF;
+    padding: 1rem;
+}
+.rms-wizard .rms-step-section:before,
+.rms-wizard .rms-step-section:after {
+    content: " ";
+    clear: both;
+    display: block;
+}
+.rms-wizard .rms-multistep-progressbar {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step {
+    list-style-type: none;
+    float: left;
+    width: 33.3%;
+    position: relative;
+    text-align: center;
+   /* height: 115px;*/
+    z-index: 10;
+}
+.rms-wizard .rms-step-section.allstepClickable .rms-multistep-progressbar li.rms-step {
+    cursor: pointer;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step:before {
+    content: " ";
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #e1ecef;
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0px auto 10px auto;
+    border-radius: 50%;
+    background: #e1ecef;
+    color: #95a3a7;
+}
+.rms-wizard .rms-step-section[data-step-counter="true"] .rms-multistep-progressbar{
+    counter-reset: step;
+}
+.rms-wizard .rms-step-section[data-step-counter="true"] .rms-multistep-progressbar li.rms-step:before{
+   content: counter(step) !important;
+   counter-increment: step;
+}
+
+.rms-wizard .ml10 {
+    margin-left: -10px !important;
+}
+.rms-wizard .rms-step-section .rms-multistep-progressbar li .step-icon {
+    z-index: 1024;
+    position: absolute;
+    top: 0;
+    margin-top: 8px;
+    font-size: 18px;
+    color: #a9a9a9;
+    margin-left: -7px;
+}
+.rms-wizard .rms-step-section[data-step-image="false"] .rms-multistep-progressbar li .step-icon{
+    opacity: 0;
+    visibility: hidden;
+}
+.rms-wizard .rms-step-section[data-step-image="true"] .rms-multistep-progressbar li .step-icon{
+    opacity: 1;
+    visibility: visible;
+}
+.rms-wizard .rms-step-section .rms-multistep-progressbar li.rms-current-step .step-icon,
+.rms-wizard .rms-step-section .rms-multistep-progressbar li.completed-step .step-icon {
+    color: #FFF;
+}
+
+.rms-wizard .rms-multistep-progressbar li.rms-step:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #e1ecef;
+    top: 14px;
+    left: 0%;
+    z-index: -1;
+    border-top: 1px solid #e1ecef;
+    border-bottom: 1px solid #e1ecef;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step:first-child:after {
+    width: 50%;
+    left: 50%;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step:last-child:after {
+    width: 50%;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step .step-title {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step.completed-step .step-title:after {
+    position: absolute;
+    color: #696969;
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    color: #92cf5c;
+    /* content: "\f058"; */
+    text-shadow: none;
+    left: 20px;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step .step-info {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    line-height: 15px;
+}
+/* Completed Step CSS Start */
+
+.rms-wizard .rms-multistep-progressbar li.rms-step.completed-step {
+    color: #000;
+}
+.rms-wizard .rms-step-section.compeletedStepClickable .rms-multistep-progressbar li.rms-step.completed-step {
+    cursor: pointer;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step.completed-step:before {
+    background-color: #01ad85;
+    border-color: #01ad85;
+    color: #FFF;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step.completed-step:after {
+    background-color: #01ad85;
+    border-color: #01ad85;
+}
+/* Completed Step CSS Close*/
+
+/* Current Step CSS Start*/
+
+.rms-wizard .rms-multistep-progressbar li.rms-step.rms-current-step {
+    color: #000;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step.rms-current-step:before {
+    background-color: #00c8fa;
+    border-color: #00c8fa;
+    color: #FFF;
+}
+.rms-wizard .rms-multistep-progressbar li.rms-step.rms-current-step:after {
+    background-color: #00c8fa;
+    border-color: #00c8fa;
+}
+/* Current Step CSS Close*/
+
+.rms-wizard {
+    padding: 0px;
+    border-radius: 4px;
+    clear: both;
+    position: relative;
+    overflow: visible;
+}
+.rms-wizard:before,
+.rms-wizard:after {
+    content: " ";
+    clear: both;
+    display: block;
+}
+.rms-wizard .rms-content-box {
+    display: none;
+    clear: both;
+}
+.rms-wizard .rms-content-box:before,
+.rms-wizard .rms-content-box:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+.rms-wizard .rms-content-box.rms-current-section {
+    display: block;
+}
+.rms-wizard .rms-content-title {
+  font-size: 1.05rem;
+  font-weight: 300;
+  border-bottom: 1px solid #dee2e6;
+  padding: 10px 10px 10px 0;
+  margin-bottom: 15px;
+  color: #353535;
+}
+.rms-wizard .rms-content-title b{
+    color:#5cb0cf;
+}
+.rms-wizard .rms-content-title:before,
+.rms-wizard .rms-content-title:after {
+    clear:both;
+    content: " ";
+    display:block;
+
+}
+.rms-wizard .rms-content-title .leftside-title {
+  float: left;
+  /* font-weight: bold; */
+  font-weight: 600;
+}
+.rms-wizard .rms-content-title b {
+    font-weight: 400;
+}
+.rms-wizard .rms-content-title b i {
+    font-size: 21px !important;
+}
+.rms-wizard .rms-content-title .step-label {
+    float: right;
+    font-size: 16px;
+}
+.rms-wizard .rms-content-body {
+    /* padding:10px 10px; */
+    border-radius: 4px;
+}
+/*Default CSS Style Close Here*/
+/*Form Field CSS Start Here*/
+.rms-wizard .inpt-form-group {
+    margin-bottom: 10px;
+}
+
+.rms-wizard .inpt-control:focus {
+    border-color: #c4cdcf;
+    outline: 0;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 5px rgba(102,175,233,.6);
+    box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 5px rgba(102,175,233,.6);
+}
+
+.rms-wizard input[type=text]::-webkit-input-placeholder,
+.rms-wizard input[type=password]::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #b5b5b5;
+}
+.rms-wizard input[type=text]::-moz-placeholder,
+.rms-wizard input[type=password]::-moz-placeholder { /* Firefox 19+ */
+  color: #b5b5b5;
+}
+.rms-wizard input[type=text]:-ms-input-placeholder,
+.rms-wizard input[type=password]:-ms-input-placeholder { /* IE 10+ */
+  color: #b5b5b5;
+}
+.rms-wizard input[type=text]:-moz-placeholder,
+.rms-wizard input[type=password]:-moz-placeholder { /* Firefox 18- */
+  color: #b5b5b5;
+}
+.rms-wizard .inpt-group-addon {
+    position: absolute;
+    right: 10px;
+    top: 4px;
+    font-size: 17px;
+    color:#5cb0cf;
+}
+.rms-wizard .inpt-group-addon i{
+
+}
+
+.rms-wizard select option {
+    color: #555 !important;
+}
+.rms-wizard select option:disabled {
+    color: #CCC !important;
+}
+
+
+
+.rms-wizard .desc-container {
+    background: #FFF;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #c4cdcf;
+     -webkit-box-shadow: inset 0px -3px 0px 0px rgba(219,219,219,0.69);
+    -moz-box-shadow: inset 0px -3px 0px 0px rgba(219,219,219,0.69);
+    box-shadow: inset 0px -3px 0px 0px rgba(219,219,219,0.69);
+}
+.rms-wizard .desc-table{}
+
+.rms-wizard .desc-table td, .rms-wizard .desc-table th {
+    padding: 0;
+    font-size: 13px;
+    padding: 5px 5px;
+    font-weight: 400;
+    font-family: inherit;
+}
+
+.rms-wizard .desc-label {
+    color: #909ca0;
+}
+.rms-wizard .desc-val {
+    color: #697375;
+}
+
+.rms-wizard .form-tooltip {
+    visibility: hidden ;
+    opacity: 0;
+    position: absolute;
+    background: #fb6b5b;
+    color:#FFF;
+    padding: 10px;
+    min-height: 100px;
+    z-index: 10;
+    width: 262px;
+    left: 100%;
+    top: 0px;
+    margin-left: 10px;
+    border-radius:4px;
+    font-size:11px;
+}
+.rms-wizard .tooltip-edge.form-tooltip {
+    bottom: 0px;
+    top:auto;
+}
+.rms-wizard .inpt-control:focus + .form-tooltip{
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease-in-out;
+       -moz-transition: opacity 0.3s ease-in-out;
+        -ms-transition: opacity 0.3s ease-in-out;
+         -o-transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
+}
+.rms-wizard .form-tooltip p {
+    margin: 0;
+    padding: 5px 0px 15px;
+}
+.rms-wizard .tooltip-title {
+    font-weight: bold;
+    font-size: 12px;
+}
+.rms-wizard .form-tooltip:before{
+   content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #fb6b5b transparent transparent;
+    top: 10px;
+    left: -20px;
+}
+.rms-wizard .tooltip-edge.form-tooltip:before {
+    bottom: 10px;
+    top:auto;
+}
+.rms-wizard .form-tooltip .tooltip-info:before {
+    content: "\f023";
+    font-family: 'FontAwesome';
+    position: relative;
+    font-size: 14px;
+    padding-right: 3px;
+    color: #FFF;
+}
+
+/*Form Field CSS Style Close Here*/
+/*Footer CSS Style Strat Here*/
+
+.rms-wizard .rms-footer-section {
+    clear: both;
+    min-height: 40px;
+    position: relative;
+    margin-top: 10px;
+}
+.rms-wizard .rms-footer-section:before,
+.rms-wizard .rms-footer-section:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+.rms-wizard .button-section {
+    width: 100%;
+    position: relative;
+}
+.rms-wizard .button-section:before,
+.rms-wizard .button-section:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+.rms-wizard .button-section .btn {
+    color: #fff;
+    position: relative;
+    left: 0px;
+    transition: all 0.3s ease 0s;
+    display: block;
+    min-width: 155px;
+    text-decoration: none;
+    background: #00c3ff;
+}
+.rms-wizard .button-section .btn small {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+}
+.rms-wizard .button-section .next .btn {
+    float: right;
+    margin-right:0 !important;
+   /* padding-right: 43px;*/
+    height: 43px;
+}
+.rms-wizard .button-section .prev .btn {
+    float: left;
+    height: 43px;
+}
+.rms-wizard .button-section .submit .btn {
+    float: right;
+    /*padding-right: 43px;*/
+}
+
+.rms-wizard .button-section .next .btn:after,
+.rms-wizard .button-section .submit .btn:after {
+  /*  content: "";
+    width: 2px;
+    height: 38px;
+    background: transparent;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    margin-right: 36px;
+    border-left: 1px solid #49c7f6;
+    border-right: 1px solid #0077c5;*/
+}
+.rms-wizard .button-section .next .btn:before,
+.rms-wizard .button-section .submit .btn:before{
+   /* content: "\f138";
+    font-family: 'FontAwesome';
+    position: absolute;
+    padding-right: 3px;
+    color: #FFF;
+    top: 8px;
+    right: 6px;
+    font-size: 20px;*/
+}
+
+
+.rms-wizard .button-section .prev .btn {
+    /*padding-left: 48px;*/
+}
+
+.rms-wizard .button-section .prev .btn:after {
+/*    content: "";
+    width: 2px;
+    height: 38px;
+    background: transparent;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    margin-left: 36px;
+    border-left: 1px solid #49c7f6;
+    border-right: 1px solid #0077c5;*/
+}
+.rms-wizard .button-section .prev .btn:before {
+   /* content: "\f137";
+    font-family: 'FontAwesome';
+    position: absolute;
+    font-size: 14px;
+    color: #FFF;
+    top: 8px;
+    left: 7px;
+    font-size: 23px;*/
+}
+/*Footer CSS Style Close Here*/
+/*Error Message CSS stylr Start Here*/
+.rms-wizard .input-error{
+    border-color:red;
+}
+.rms-wizard .errors{
+    color:red;
+    font-size: 13px;
+    display:block;
+    width: 100%;
+
+}
+.rms-wizard .errors:before {
+    content: "\f071";
+    font-family: 'FontAwesome';
+    position: relative;
+    color: red;
+    top: 0;
+    left: 0;
+    padding-right: 3px;
+    font-size: 14px;
+}
+ /*Error Message CSS stylr Close Here*/
+/*Wizard CSS Style According to Device Start Here*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .rms-wizard .rms-multistep-progressbar li.rms-step {
+        width: 50%;
+        height: auto;
+    }
+
+
+}
+@media only screen and (max-width: 767px) {
+    .rms-wizard .rms-multistep-progressbar li.rms-step {
+        width: 100%;
+        height: auto;
+        margin-bottom: .75rem;
+    }
+
+}
+@media only screen and (max-width: 1024px) {
+    .rms-wizard .rms-multistep-progressbar li.rms-step:after {
+       /* display:none; */
+    }
+    .rms-wizard .rms-multistep-progressbar li.rms-step:before {
+        float: left;
+    }
+    .rms-wizard .rms-multistep-progressbar li.rms-step .step-title {
+        padding-left: 60px;
+    }
+    .rms-wizard .rms-multistep-progressbar li.rms-step .step-info {
+        padding-left: 60px;
+    }
+    .rms-wizard .rms-multistep-progressbar li.rms-step.completed-step .step-title:after {
+        left: auto;
+        padding-left:10px;
+    }
+    .rms-wizard .form-tooltip {
+        left: auto;
+        top: auto;
+        bottom: 45px;
+        right: 0;
+    }
+    .rms-wizard .form-tooltip:before {
+        border-color: #fb6b5b transparent transparent transparent;
+        top: auto;
+        left: auto;
+        right: 10px;
+        bottom: -20px;
+    }
+    .rms-wizard .ml10 {
+        margin-left: 10px !important;
+    }
+    .rms-wizard .rms-step-section .rms-multistep-progressbar li .step-icon {
+        z-index: 1024;
+        position: absolute;
+        top: 0;
+        margin-top: 8px;
+        font-size: 18px;
+        color: #a9a9a9;
+        margin-left: 13px;
+        left: 0;
+    }
+
+}
+/*Wizard CSS Style According to Device Close Here*/
+
+/*Wizard Theme CSS Style start Here*/
+
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step:before {
+    border-color: #bac7e3;
+    background: #d9e8f5;
+    color: #0074d9;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li .step-icon {
+    color: #0074d9;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step:after {
+    background-color: #d9e8f5;
+    border-top-color: #bac7e3;
+    border-bottom-color:#bac7e3;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step .step-title {
+    color: #464646;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step .step-info {
+    color: #a8a8a8;
+}
+
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.completed-step:before {
+    background-color: #92cf5c;
+    border-color: #92cf5c;
+    color: #FFF;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.completed-step .step-icon {
+    color: #FFF;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.completed-step:after {
+    background-color: #92cf5c;
+    border-color: #75b43e;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.completed-step .step-title {
+    color: #567d34;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.completed-step .step-info {
+    color: #567d34;
+}
+
+
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.rms-current-step:before {
+    background-color: #0074d9;
+    border-color: #0860ad;
+    color: #FFF;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-current-step .step-icon  {
+    color: #FFF;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.rms-current-step:after {
+    background-color: #0074d9;
+    border-color: #0860ad;
+}
+
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.rms-current-step .step-title {
+    color: #185991;
+}
+.rms-wizard.steptheme1 .rms-multistep-progressbar li.rms-step.rms-current-step .step-info {
+    color: #185991;
+}
+
+
+.rms-wizard.steptheme1 .rms-content-title b {
+    color: #0074d9;
+}
+.rms-wizard.steptheme1 .inpt-group-addon {
+    color: #0074d9;
+}
+.rms-wizard.steptheme1 .rms-wizard-header .title span {
+    color: #0074d9;
+}
+
+.rms-wizard.steptheme1 .rms-step-section {
+    border-bottom-color:#d0dde1;
+    background: #f2f7f9;
+}
+.rms-wizard.steptheme1 .rms-wizard-header {
+    background: #FFF;
+    border-bottom-color: #d0dde1;
+}
+.rms-wizard.steptheme1 .form-tooltip {
+    background: #26324b;
+    color: #7d94c8;
+}
+.rms-wizard.steptheme1 .form-tooltip .tooltip-title {
+    color:#7092db;
+}
+.rms-wizard.steptheme1 .form-tooltip .tooltip-info:before {
+    color: #7d94c8;
+}
+.rms-wizard.steptheme1 .form-tooltip:before {
+    border-color: transparent #26324b transparent transparent;
+}
+/*Wizard Theme CSS Style Close Here*/

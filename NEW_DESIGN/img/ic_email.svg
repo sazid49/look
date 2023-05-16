@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_email</title>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="15---Restaurant-Profile" transform="translate(-352.000000, -706.000000)" fill="#a8a7ab">
+            <g id="Group-25" transform="translate(330.000000, 99.000000)">
+                <g id="Group-17" transform="translate(0.000000, 46.000000)">
+                    <g id="Group-16" transform="translate(20.000000, 70.000000)">
+                        <g id="Group-14" transform="translate(0.000000, 344.000000)">
+                            <g id="Group-13" transform="translate(0.000000, 79.000000)">
+                                <g id="Group-10" transform="translate(0.000000, 30.000000)">
+                                    <g id="Icons/ic_" transform="translate(0.000000, 34.000000)">
+                                        <path d="M19,4.25 C20.5187831,4.25 21.75,5.48121694 21.75,7 L21.75,7 L21.75,17 C21.75,18.5187831 20.5187831,19.75 19,19.75 L19,19.75 L5,19.75 C3.48121694,19.75 2.25,18.5187831 2.25,17 L2.25,17 L2.25,7 C2.25,5.48121694 3.48121694,4.25 5,4.25 L5,4.25 Z M20.25,8.401 L12.4160251,13.6240377 C12.1955912,13.7709937 11.9167579,13.7893632 11.6817241,13.6791462 L11.5839749,13.6240377 L3.75,8.402 L3.75,17 C3.75,17.6472087 4.24187466,18.1795339 4.87219476,18.2435464 L5,18.25 L19,18.25 C19.6903559,18.25 20.25,17.6903559 20.25,17 L20.25,17 L20.25,8.401 Z M19,5.75 L5,5.75 C4.43692844,5.75 3.96081219,6.12229993 3.80438545,6.63416559 L12,12.097 L20.1956145,6.63416559 C20.0391878,6.12229993 19.5630716,5.75 19,5.75 L19,5.75 Z" id="Combined-Shape"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

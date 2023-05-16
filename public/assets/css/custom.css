@@ -1,0 +1,34 @@
+.badge-pill {
+	background-color: #2a2e33;
+}
+
+/* .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-search:before {
+    content: "\e003";
+}
+
+button.btn.btn-default.active.xcrud-action,li.active.page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #556ee6;
+    border-color: #556ee6;
+}
+
+button.btn.btn-default.xcrud-action {
+	border-color:#ced4da;
+} */
+
+.errors {
+	color: #f46a6a;
+}
